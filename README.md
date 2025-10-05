@@ -13,18 +13,9 @@ Unknown test digits are classified according to **how well they can be reconstru
 
 1. **Load training and test data**
 2. **Compute SVD for each digit class**
-   - `A_d = U_d Σ_d V_dᵀ` for each digit `d ∈ {0,…,9}`
-   - Keep the first *k* left singular vectors (`U_d[:, :k]`)
-
 3. **Classify test images**
-   - For each test image `x`, compute the least-squares projection residual  
-     \( r_d = \|x - U_d (U_d^T x)\| / \|x\| \)
-   - Classify `x` as the digit `d` with **minimum residual**
-
 4. **Evaluate performance**
-   - Compute classification accuracy vs. number of singular vectors (e.g., k ∈ [5, 20])
-   - Optionally analyze per-digit difficulty and singular values
-
+   
 ---
 
 Visualizations include:
